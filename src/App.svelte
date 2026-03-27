@@ -5,9 +5,23 @@
   import type { Point } from "./objects/Point";
   import Canvas from "./components/Canvas.svelte";
 
-  const points: Point[] = [];
+  let points: Point[] = [];
 </script>
 
-<Canvas {points}></Canvas>
-<ControlPanel {points}></ControlPanel>
-<Pseudocode></Pseudocode>
+<div class="appWrap">
+  <Canvas {points}></Canvas>
+  <div class="controls">
+    <ControlPanel bind:points></ControlPanel>
+    <Pseudocode></Pseudocode>
+  </div>
+</div>
+
+<style>
+  .appWrap {
+    display: flex;
+  }
+  .controls {
+    padding: 1rem;
+    flex: 1 1 0;
+  }
+</style>

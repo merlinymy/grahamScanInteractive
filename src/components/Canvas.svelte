@@ -2,7 +2,8 @@
   import { Canvas } from "@threlte/core";
   import Scene from "../canvas/Scene.svelte";
 
-  const points = $props();
+  let { points } = $props();
+  $inspect(points);
 </script>
 
 <div class="canvasWrapper">
@@ -15,5 +16,6 @@
   .canvasWrapper {
     width: 100%;
     background-color: black;
+    flex: 2 1 0;
   }
 </style>

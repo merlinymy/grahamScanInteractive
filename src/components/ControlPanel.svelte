@@ -3,13 +3,13 @@
   import { Point } from "../objects/Point";
 
   let pointsCount = $state(10);
-  let { points } = $props();
+  let { points = $bindable() } = $props();
 
   function generateRandomPoints(numPoints: number) {
     points = []; // Clear the existing points
     for (let i = 0; i < numPoints; i++) {
-      const x = Math.round(Math.random() * 100);
-      const y = Math.round(Math.random() * 100);
+      const x = Math.round(Math.random() * 10);
+      const y = Math.round(Math.random() * 10);
       points.push(new Point(x, y));
     }
   }
